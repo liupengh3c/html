@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>video测试</title>
+
+</head>
+<body>
+<button onclick="play()">开始/暂停</button>
+<button onclick="big()">big</button>
+<button onclick="small()">small</button>
+</br></br>
+<video id="v1" width="320" height="240" controls="controls" autoplay="autoplay" loop="loop">
+  <source src="movie.ogg" type="video/ogg">
+  <source src="movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<script type="text/javascript">
+	var bos=document.getElementById("v1");
+
+	function play(){
+		if (bos.played) {
+			bos.pause();
+		}else{
+			bos.play();
+		}
+	}
+
+	function big(){
+		bos.width = 640;
+		bos.height = 480;
+	}
+
+	function small(){
+		bos.width = "320";
+		bos.height = "240";
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>audio测试</title>
+</head>
+<body>
+<button onclick="play()">开始/暂停</button>
+</br>
+<audio id="au" controls="controls">
+	<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script type="text/javascript">
+	var a = document.getElementById("au");
+	function play(){
+		if (a.paused) {
+			a.play();
+		}else{
+			a.pause();
+		}
+	}
+
+</script>
+</body>
+</html>

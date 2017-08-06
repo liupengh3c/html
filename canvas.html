@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>canvas测试</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="200" height="200" style="border:1px solid #c3c3c3;">
+	Your browser does not support the canvas element.
+	</canvas>
+
+	<canvas id="myCanvas2" width="200" height="200" style="border:1px solid #c3c3c3;">
+	Your browser does not support the canvas element.
+	</canvas>
+
+	<canvas id="myCanvas3" width="200" height="200" style="border:1px solid #c3c3c3;">
+	Your browser does not support the canvas element.
+	</canvas>
+
+	<script type="text/javascript">
+	var c=document.getElementById("myCanvas3");
+	var cxt=c.getContext("2d");
+	var grd=cxt.createLinearGradient(0,0,175,50);
+	grd.addColorStop(0,"#FF0000");
+	grd.addColorStop(1,"#00FF00");
+	cxt.fillStyle=grd;
+	cxt.fillRect(0,0,200,100);
+
+	var c=document.getElementById("myCanvas2");
+	var ctx=c.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(95,50,40,0,2*Math.PI);
+	ctx.stroke();
+	ctx.fillText("Hello World",50,50);
+
+	var c=document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+	ctx.moveTo(10,10);
+	ctx.lineTo(150,50);
+	ctx.lineTo(10,50);
+	ctx.stroke();
+	</script>
+</body>
+</html>

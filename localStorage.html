@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>localStorage测试</title>
+	</head>
+	<body>
+		<p>刷新页面会看到计数器在增长。</p>
+		<p>请关闭浏览器窗口，然后再试一次，计数器会继续计数。</p>
+		<p>本地存储，在浏览器关闭时数据永远不会丢失，除非手动删除</p>
+		<button onclick="clearItem()">删除数据</button>
+		<br/>
+		<script type="text/javascript">
+			if (!window.localStorage) {
+				alert('浏览器不支持本地存储');
+			}
+			if (localStorage.pagecount){
+				localStorage.pagecount=Number(localStorage.pagecount) +1;
+			}else{
+				localStorage.pagecount=1;
+			}
+			document.write("Visits localStorage: " + localStorage.pagecount + " time(s).<br/><br/>");
+			function clearItem(){
+				localStorage.pagecount = 0;
+				sessionStorage.pagecount = 0;
+			}
+
+			if (sessionStorage.pagecount){
+				sessionStorage.pagecount=Number(sessionStorage.pagecount) +1;
+			}else{
+				sessionStorage.pagecount=1;
+			}
+			document.write("Visits sessionStorage "+sessionStorage.pagecount+" time(s) this session.");
+
+		</script> 
+	</body>
+</html>
